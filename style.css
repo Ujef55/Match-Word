@@ -18,7 +18,7 @@ body {
   align-items: center;
   flex-direction: column;
   font-family: "Kanit";
-  gap: 5rem;
+  gap: 2rem;
   /* height: 100vh; */
   background-color: var(--bg-main);
 }
@@ -32,9 +32,42 @@ body {
   color: #efc745;
 }
 
+.score {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.scoreText {
+  font-size: 23px;
+  color: #fff;
+}
+
+.resetBtn {
+  background-color: #efc745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.resetBtn:hover {
+  background-color: #d4b53f;
+  transform: scale(1.05);
+}
+
+.resetBtn:active {
+  background-color: #c1a636;
+  transform: scale(0.95);
+}
+
 .card-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 1rem;
 }
 
@@ -53,6 +86,16 @@ body {
 }
 
 .card p {
-  font-size: 1rem;
+  font-size: 0rem;
   color: #fff;
+  transition: font-size 0.3s ease;
+}
+
+.card p.show {
+  font-size: 1rem;
+}
+
+.card.matched {
+  background-color: var(--border-color);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px;
 }
